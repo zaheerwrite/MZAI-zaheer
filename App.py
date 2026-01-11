@@ -1,12 +1,12 @@
 import streamlit as st
 from groq import Groq
 
-# Page Setup
-st.set_page_config(page_title="MZ AI محمد ظہیر مانسہرہ Chat", layout="centered")
-st.title("MZ Zaheer  محمدظہیرمانسہرہ")
+# Page Config
+st.set_page_config(page_title="MZ AI Chat", layout="centered")
+st.title("MZ Zaheer")
 
-# Aap ki Groq 
-client = Groq(api_key="Gsk_GCATDBwspkof1ORhZ3g2WGdyb3FY7HFGhu10Wic39ocQ3d1hPZ1G")
+# Aap ki Groq API Key
+client = Groq(api_key="Gsk_s1XvxzByj07gpj5PDCAEWGdyb3FYgGASMUqPIUmp42OTh6VxXxI9")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -30,4 +30,4 @@ if prompt := st.chat_input("Ask MZ Zaheer anything..."):
             st.write(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
     except Exception as e:
-        st.error("Something went wrong. Please check back later.")
+        st.error("Please check your API Key.")
